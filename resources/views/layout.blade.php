@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+
+        <style>
+            li {
+                list-style:none;
+            }
+        </style>
     </head>
   <body>
     @yield('content')

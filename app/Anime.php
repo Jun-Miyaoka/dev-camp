@@ -26,4 +26,10 @@ class Anime extends Model
 
         return $animeName;
     }
+
+    public function searchAnime(string $keyword)
+    {
+        return $this->where('anime_name', 'like', '%'.$keyword.'%')
+                    ->get();
+    }
 }

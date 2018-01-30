@@ -12,8 +12,8 @@ class AnimeSimilarity extends Model
     {
          $results = $this->select('related_anime_id')
                          ->where('anime_id', $animeId)
-                         ->orderBy('score', 'desc')
-                         ->take(5)
+                         ->orderBy('similarity', 'desc')
+                         ->take(20)
                          ->get()
                          ->toArray();
 

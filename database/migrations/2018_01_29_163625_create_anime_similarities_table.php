@@ -14,10 +14,11 @@ class CreateAnimeSimilaritiesTable extends Migration
     public function up()
     {
         Schema::create('anime_similarities', function($table){
-            $table->increments('id');
             $table->unsignedInteger('anime_id');
             $table->unsignedInteger('related_anime_id');
-            $table->float('score', 3, 2);
+            $table->float('similarity');
+            $table->index(['anime_id', 'related_anime_id']);
+            $table->unique(['anime_id', 'related_anime_id']);
         });
     }
 

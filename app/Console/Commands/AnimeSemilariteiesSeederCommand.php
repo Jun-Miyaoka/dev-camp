@@ -12,14 +12,14 @@ class AnimeSemilaritiesSeederCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'seeder:user-rank';
+    protected $signature = 'seeder:similarity';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'insert user rank data';
+    protected $description = 'insert anime similarity';
 
 
     /**
@@ -27,11 +27,11 @@ class AnimeSemilaritiesSeederCommand extends Command
      */
     public function handle()
     {
-        $path = "public/files/user_rank_items.csv";
+        $path = "public/files/anime_similarities.csv";
 
         $sql = <<<EOT
 LOAD DATA LOCAL INFILE '{$path}' REPLACE
-INTO TABLE user_rank
+INTO TABLE anime_similarities
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES

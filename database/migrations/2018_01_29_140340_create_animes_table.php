@@ -17,7 +17,7 @@ class CreateAnimesTable extends Migration
             $table->increments('id');
             $table->string('anime_name');
             $table->float('rating', 4, 2);
-            $table->unsignedInteger('media_id');
+            $table->unsignedInteger('media_id')->nullable();
         });
     }
 
